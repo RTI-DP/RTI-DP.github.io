@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>Real-TIme Iteration Scheme for Diffusion Policy</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -258,31 +258,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Diffusion policies have demonstrated impressive performance in robotic manipulation tasks. However, the iterative denoising process employed in diffusion policies results in long inference time, which limits the applicability to low-latency and simple tasks with a short cycle time.
+            Recent methods have explored distillation and alternative policy
+            structures to accelerate inference, but these approaches often
+            require retraining the policy. This paper introduces a novel
+            iteration scheme inspired by the Real-Time Iteration (RTI)
+            Scheme from optimal control that accelerates optimization by
+            leveraging solutions from previous time steps as initial guesses
+            for subsequent iterations. We apply this scheme to diffusion
+            inference and propose a scaling-based method to handle discrete
+            actions effectively. The proposed scheme significantly reduces
+            the computational costs without distillation or policy redesign.
+            This enables a seamless integration into many pre-trained
+            diffusion-based models, in particular, to resource-demanding
+            large models. Our quantitative results on numerous simulation
+            experiments find a drastic reduction of inference time and an
+            enhanced overall performance.
           </p>
         </div>
       </div>
@@ -290,7 +281,7 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+<!--     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -298,12 +289,12 @@
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Paper video. -->
   </div>
 </section>
 
-
+<!-- 
 <section class="section">
   <div class="container is-max-desktop">
 
@@ -438,10 +429,10 @@
     <!--/ Concurrent Work. -->
 
   </div>
-</section>
+</section> -->
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -451,7 +442,7 @@
   year      = {2021},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
@@ -469,16 +460,8 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Template from <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a>.
           </p>
         </div>
       </div>
